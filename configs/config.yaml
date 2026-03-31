@@ -1,0 +1,23 @@
+server:
+  port: 9080
+  mode: debug
+database:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: "sunshiwen0808"
+  dbname: goai
+redis:
+  host: 127.0.0.1
+  port: 6379
+  password: ""
+  db: 0
+
+jwt:
+  secret: "sunshiwen"
+  expire: 72
+
+ai:
+  api_key: "sk-X24o9aCFZvXDtThNbfXDjarMwJRm6frFNJRe89fCV0a8xNzL"
+  model: "moonshot-v1-8k"
+  base_url: "https://api.moonshot.cn/v1"

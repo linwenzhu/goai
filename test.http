@@ -1,0 +1,41 @@
+### 注册
+POST http://localhost:9080/api/v1/user/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "123456",
+  "email": "test1@test.com"
+}
+
+### 登录
+POST http://localhost:9080/api/v1/user/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "123456"
+}
+
+### 测试鉴权（把token换成登录返回的token）
+GET http://localhost:9080/api/v1/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6InRlc3QiLCJleHAiOjE3NzUxMTQ0ODgsImlhdCI6MTc3NDg1NTI4OH0.m0-QDw-oWYgnu-W3-nmzT1MbFw6atJxtNJJEjMAG80A
+
+
+### 单轮对话
+POST http://localhost:9080/api/v1/chat
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6InRlc3QiLCJleHAiOjE3NzUxMTgxNzMsImlhdCI6MTc3NDg1ODk3M30.BXTGG31dltWV1w3xeuw7irgXJVNNRHxZBCP6y8rhxHw
+
+{
+  "message": "你好，请介绍一下你自己"
+}
+
+### 流式对话
+POST http://localhost:9080/api/v1/chat/stream
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6InRlc3QiLCJleHAiOjE3NzUxMjA0MDksImlhdCI6MTc3NDg2MTIwOX0.XZXlsJrKdvbo-f8La8m5Mq92LH9eOqHsTNYkiB7yzdw
+
+{
+  "message": "请用100字介绍一下Go语言"
+}
